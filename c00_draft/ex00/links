@@ -1,0 +1,5 @@
+http://codewiki.wikidot.com/c:system-calls:write
+
+https://en.wikipedia.org/wiki/Unistd.h ##libreria que contiene la funcion write. 
+
+### alias para compilar gcc -Wall -Wextra -Werror ft_putchar.c main.c && ./a.out

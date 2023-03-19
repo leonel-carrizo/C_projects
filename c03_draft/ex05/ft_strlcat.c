@@ -1,0 +1,67 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lcarrizo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/15 23:39:34 by lcarrizo          #+#    #+#             */
+/*   Updated: 2023/03/16 00:25:52 by lcarrizo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+#include <stdio.h>
+
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (*str != '\0')
+	{
+		i++;
+		str++;
+	}
+	return (i);
+}
+
+unsigned int 	ft_strlcat(char *dest, char *src, unsigned int size)
+{
+
+	unsigned int	i;
+	unsigned int	j;
+	unsigned int	dlen;
+	unsigned int	slen;
+
+	i = 0;
+	j = 0;
+	while (dest[j] != '\0')
+	{
+		j++;
+	}
+	dlen = j;
+	slen = ft_strlen(src);
+	if (size == 0 || size <= dlen)
+		return (slen + size);
+	while (src [i] != '\0' && i < size - dlen - 1)
+	{
+		dest[j] = src[i];
+		i++;
+		j++;
+	}
+	dest[j] = '\0';
+	return (dlen + slen);
+
+}
+
+int	main(void)
+{
+	char src[] = "Born to code";
+	char dest[] = "1337 42";
+
+	printf("%i \n", ft_strlcat(dest, src, 20));
+	printf("%s", dest);
+
+	return (0);
+}
