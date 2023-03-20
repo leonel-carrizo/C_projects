@@ -6,7 +6,7 @@
 /*   By: lcarrizo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 11:19:17 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/03/20 11:09:24 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2023/03/20 12:03:09 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include<stdio.h>
@@ -44,7 +44,7 @@ int	main(int ac, char **av)
 	int theirs;
 	if (ac == 2)
 	{
-		mine = ft_atio(av[1]);
+		mine = ft_atoi(av[1]);
 		theirs = atoi(av[1]);
 		printf("el mio: %d | el standar: %d \n", mine, theirs);
 	}

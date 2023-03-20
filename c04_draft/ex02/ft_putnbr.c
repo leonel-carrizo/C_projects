@@ -6,12 +6,13 @@
 /*   By: lcarrizo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 10:49:20 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/03/16 17:08:21 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2023/03/20 12:23:18 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
+#include <limits.h>
 
 void	ft_putchar(char c)
 {
@@ -38,9 +39,10 @@ void	ft_putnbr(int nb)
 
 int	main(void)
 {
-	int num = 2253594;
+	//int num = 2253594;
 	
-	ft_putnbr(num);
+	//ft_putnbr(num);
+	ft_putnbr(INT_MIN);
 
 	return (0);
 }

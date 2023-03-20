@@ -1,9 +1,10 @@
 #include <unistd.h>
+#include <limits.h>
 
 void	ft_putnbr(int nb)
 {    
-	int	number[10];
-	int	values;
+	char	number[10];
+	long	values;
 	short	i;
     
 	values = nb;
@@ -35,7 +36,7 @@ void	ft_putnbr(int nb)
 
 int	main(void)
 {
-	ft_putnbr(-9);
+	ft_putnbr(INT_MAX);
 	write(1	,"\n" , 1);
 
 	return (0);
