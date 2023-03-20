@@ -6,14 +6,14 @@
 /*   By: lcarrizo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 11:19:17 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/03/16 13:50:34 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2023/03/20 11:09:24 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include<stdio.h>
 #include <unistd.h>
 #include <stdlib.h> //DELETE !!!!
 
-int	ft_atio(char *str)
+int	ft_atoi(char *str)
 {
 	int	result;
 	int	sign;
