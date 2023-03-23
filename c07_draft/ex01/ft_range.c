@@ -6,7 +6,7 @@
 /*   By: lcarrizo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 12:12:34 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/03/23 13:38:17 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2023/03/23 14:13:08 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,13 @@ int	*ft_range(int min, int max)
 		return (NULL);
 	
 	result = (int *)malloc(sizeof(int) * len);
-	if (result == NULL)
+	if (!result)
 		return (NULL);
 
 	i = 0;
-	while (*result)
+	while (i < len)
 	{
 		result[i] = min + i;
-	//	min++;
 		i++;
 	}
 	return (result);
