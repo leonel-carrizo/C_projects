@@ -3,40 +3,36 @@
 
 void	ft_putnbr(int nb)
 {    
-	char	number[10];
-	long	values;
+	long	nbr;
+	char	num[10];
 	short	i;
-    
-	values = nb;
-	if (nb == 0)
-  	{
+	
+	nbr = nb;
+
+	if (0 == nb)
 		write(1, "0", 1);
-	}
-  	else if(nb < 0)
+	if (nbr < 0)
 	{
-		values *= -1;
+		nbr *= -1;
 		write(1, "-", 1);
 	}
-
 	i = 0;
-	while (values)
+	while (nbr)
 	{
-		number[i] = (values % 10) + 48;
-		values /= 10;
+		num[i] = (nbr % 10) + '0';
+		nbr /= 10;
 		i++;
 	}
-	while ( i >= 0)
-	{
-		write(1, &number[--i], 1);
-		
-	}
+	while (i > 0)
+		write(1, &num[--i], 1);
+
 }
 
 // ##########################
 
 int	main(void)
 {
-	ft_putnbr(INT_MAX);
+	ft_putnbr(INT_MIN);
 	write(1	,"\n" , 1);
 
 	return (0);

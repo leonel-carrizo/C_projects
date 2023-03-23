@@ -1,43 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_v2.c                                     :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarrizo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/10 12:59:10 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/03/10 12:59:36 by lcarrizo         ###   ########.fr       */
+/*   Created: 2023/03/21 09:49:08 by lcarrizo          #+#    #+#             */
+/*   Updated: 2023/03/21 10:49:41 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <limits.h>
+#include <stdio.h>
 
-void	ft_putchar(char c)
+int	ft_sqrt(int nb)
 {
-	write(1, &c, 1);
-}
-
-void	ft_putnbr(int nbr)
-{
-	if (nbr < 0)
-	{
-		ft_putchar('-');
-		ft_putnbr(-nbr);
-	}
-	else if (nbr > 9)
-	{
-		ft_putnbr(nbr / 10);
-		ft_putnbr(nbr % 10);
-	}
+	int	i;
+	i = 0;
+	if (nb <= 0)
+		return (0);
+	if (nb == 1)
+		return (1);
+	while (i * i < nb && i <= 464340)
+		i++;
+	if (i * i == nb)
+		return (i);
 	else
-	{
-		ft_putchar(nbr + '0');
-	}
+		return (0);
 }
 
-int	main(void)
+int	main()
 {
-	ft_putnbr(INT_MIN);
+	printf("%d", ft_sqrt(48));
 	return (0);
 }
+/*
+ * numero que multiplicado por si mismo sea igual a nb,
+ * es decir, un numero que elevado al cuadrado sea nb.
+ * ej.  la raiz cuadrada de 25 --> 5^5 = 25.
+ */

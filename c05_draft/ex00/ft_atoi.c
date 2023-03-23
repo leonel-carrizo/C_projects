@@ -6,7 +6,7 @@
 /*   By: lcarrizo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 11:19:17 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/03/22 14:05:08 by lcarrizo         ###   ########.fr       */
+/*   Updated: 2023/03/20 21:15:57 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include<stdio.h>
@@ -38,18 +38,15 @@ int	ft_atoi(char *str)
 	return (result * sign);
 }
 
-int	main(int ac, char **av)
-{
-	int mine;
-	int theirs;
-	if (ac < 1 || ac > 3)
-		write(1, "a", 1);
-		
-	if (ac == 2)
-	{
-		mine = ft_atoi(av[1]);
-		theirs = atoi(av[1]);
-		printf("el mio: %d | el standar: %d \n", mine, theirs);
-	}
-	return (0);
-}
+//int	main(int ac, char **av)
+//{
+//	int mine;
+//	int theirs;
+//	if (ac == 2)
+//	{
+//		mine = ft_atoi(av[1]);
+//		theirs = atoi(av[1]);
+//		printf("el mio: %d | el standar: %d \n", mine, theirs);
+//	}
+//	return (0);
+//}

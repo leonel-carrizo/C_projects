@@ -1,43 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_v2.c                                     :+:      :+:    :+:   */
+/*   ft_rev_param.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarrizo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/10 12:59:10 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/03/10 12:59:36 by lcarrizo         ###   ########.fr       */
+/*   Created: 2023/03/22 13:31:11 by lcarrizo          #+#    #+#             */
+/*   Updated: 2023/03/22 14:11:21 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <limits.h>
 
-void	ft_putchar(char c)
+void	ft_putstr(char *str)
 {
-	write(1, &c, 1);
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		write(1, &str[i++], 1);
 }
 
-void	ft_putnbr(int nbr)
+int	 main(int ac, char **av)
 {
-	if (nbr < 0)
-	{
-		ft_putchar('-');
-		ft_putnbr(-nbr);
-	}
-	else if (nbr > 9)
-	{
-		ft_putnbr(nbr / 10);
-		ft_putnbr(nbr % 10);
-	}
-	else
-	{
-		ft_putchar(nbr + '0');
-	}
-}
+	int j;
 
-int	main(void)
-{
-	ft_putnbr(INT_MIN);
+	j = ac;
+	while (j > 1)
+	{	ft_putstr(av[--j]);
+		ft_putstr("\n");
+	}
 	return (0);
 }
+

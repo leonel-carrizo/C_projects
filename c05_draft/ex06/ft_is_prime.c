@@ -1,43 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_v2.c                                     :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarrizo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/10 12:59:10 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/03/10 12:59:36 by lcarrizo         ###   ########.fr       */
+/*   Created: 2023/03/21 11:29:37 by lcarrizo          #+#    #+#             */
+/*   Updated: 2023/03/21 12:10:17 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <limits.h>
+#include <stdio.h>
 
-void	ft_putchar(char c)
+int	ft_is_prime(int nb)
 {
-	write(1, &c, 1);
+	int 	i;
+
+	i = 0;
+	if (nb <= 1)
+		return (0);
+	i = 2;
+	while (nb % i != 0)
+		i++;
+	if (i == nb)
+		return(1);
+	else 
+		return(0);
 }
 
-void	ft_putnbr(int nbr)
+int	main()
 {
-	if (nbr < 0)
-	{
-		ft_putchar('-');
-		ft_putnbr(-nbr);
-	}
-	else if (nbr > 9)
-	{
-		ft_putnbr(nbr / 10);
-		ft_putnbr(nbr % 10);
-	}
-	else
-	{
-		ft_putchar(nbr + '0');
-	}
-}
-
-int	main(void)
-{
-	ft_putnbr(INT_MIN);
+	printf("%d\n",ft_is_prime(11));
 	return (0);
 }
+
+/*
+ * solo son divisibles entre 1 y ellos mismos.
+ */

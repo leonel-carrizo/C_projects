@@ -1,54 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lcarrizo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/16 10:49:20 by lcarrizo          #+#    #+#             */
-/*   Updated: 2023/03/20 19:54:24 by lcarrizo         ###   ########.fr       */
+/*   Created: 2023/03/20 11:34:03 by lcarrizo          #+#    #+#             */
+/*   Updated: 2023/03/20 23:09:42 by lcarrizo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <unistd.h>
 #include <stdio.h>
-#include <limits.h>
 
-void	ft_putnbr(int nb)
+#include "ft_atoi.c"
+
+int	ft_iterative_factorial(int nb)
 {
-	long	nbr;
-	char	num[10];
-	short	i;
-	
-	nbr = nb;
+	int	result;
+	int	i;
 
-	if (0 == nb)
-		write(1, "0", 1);
-	if (nbr < 0)
+	//start in 1 because the 0! = 1.
+	i = 1; 
+	result = 1;
+	if (nb < 0)
+		return (0);
+	if (nb <= 1)
+		return (1);
+	while (i <= nb)
 	{
-		nbr *= -1;
-		write(1, "-", 1);
-	}
-	i = 0;
-	while (nbr)
-	{
-		num[i] = (nbr % 10) + '0';
-		nbr /= 10;
+		result = i * result;
 		i++;
 	}
-	while (i > 0)
-		write(1, &num[--i], 1);
+	return (result);
+
 }
 
-int	main(void)
+int	main(int ac, char *av[])
 {
-	ft_putnbr(INT_MIN);
-	printf("\n");
-	ft_putnbr(4294967295);
-	printf("\n");
-	ft_putnbr(-8);
-	printf("\n");
-	ft_putnbr(INT_MAX);
+	int	test;
+
+	if (ac < 2 || ac > 2)
+	{
+		write(1, "Come on!\n", 9);
+		return (1);
+	}	
+
+	test = ft_atoi(av[1]);
+	printf("%d\n", ft_iterative_factorial(test));
 
 	return (0);
 }
